@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+}
+
+.main-menu {
+    list-style-type: none;
+    display: flex;
+    max-width: 1100px;
+    height: 100%;
+    gap: 40px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: rgb(14, 30, 91);
+    position: sticky;
+    top: 0;
+}
+
+li {
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+    padding: 15px;
+}
+
+li:hover {
+    color: rgb(14, 30, 91);
+    background-color: white;
+}
+
+
+.hero {
+    height: 100vh;
+    background-image: url('./images/cl2.jpg');
+    background-color: rgba(0,0,0,0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.title {
+    color: white;
+    font-size: 4.5rem;
+}
+
+.hero-text {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.hero-button {
+    background-color: white;
+    color: rgb(14, 30, 91);
+    border-radius: 10px;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    color: white;
+    background-color: rgb(14, 30, 91);
+}
+
+.hero .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    margin-top: 120px;
+}
+
+.main-container {
+    margin: 20px auto;
+    height: 60%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    max-width: 1400px;
+}
+
+img {
+    max-width: 600px;
+    border-radius: 20px;
+}
+
+.main-text, .main-image {
+    flex: 1;
+}
+
+.intro{
+    max-width: 900px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.intro h2, .main-text h2 {
+    font-size: 2rem;
+    margin: 30px auto;
+}
+
+.intro p, .main-text p {
+    font-size: 1.8rem;
+}
+
+.main-text {
+    text-align: left;
+}
+
+.teamContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 30px;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.main .mainHeader{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 70px;
+}
+
+.details {
+    flex: 1;
+}
+
+.teamContainer h2{
+    background-color: rgb(14, 30, 91);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.teamContainer h2:hover {
+    background-color: rgba(14, 30, 91, 0.8);
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    z-index: -2;
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+    z-index: 2;
+}
+
+.banner {
+    max-width: 1100px;
+    height: 70%;
+    display: flex;
+    background-color: white;
+    margin: 200px auto;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.banner img {
+    width: 300px;
+}
+
+.banner .info {
+    flex: 1;
+    text-align: start;
+}
+
+.banner .info h2 {
+    font-size: 2.5rem;
+    margin-bottom:  40px;
+}
+
+.banner .info p{
+    text-align: start;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+
+.banner .img-container {
+    flex: 1;
+    text-align: center;
+}
+
+.banner .close {
+    position: absolute;
+    padding: 12px;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background-color: rgba(230, 0, 0, 1);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.banner .close:hover {
+    background-color: rgba(230, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.main .table {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    gap: 80px;
+    margin: 30px auto 100px;
+    padding: 50px;
+    justify-content: center;
+    justify-items: start;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: rgb(14, 30, 91);
+    color: white;
+    border-radius: 10px;
+    width: 60%;
+}
+
+@media (max-width: 920px) {
+    .teamContainer {
+        grid-template-columns: auto auto;
+    }
+
+    .main .table{
+        width: 90%;
+        overflow: scroll;
+    }
+
+    .hero-text{
+        font-size: 1.2rem;
+    }
+
+    .hero .title{
+        font-size: 2.3rem;
+    }
+
+    .hero-button{
+        font-size: 1.2;
+    }
+
+    .hero{
+        background-position: bottom right;
+    }
+
+    .main-container{
+        flex-direction: column;
+    }
+
+    .main-image{
+        order: 1;
+    }
+
+}
+
+@media (max-width: 520px) {
+    .teamContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
