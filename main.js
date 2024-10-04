@@ -218,6 +218,13 @@ function renderFixtures(){
 }
 
 
+
+function showMenu(){
+    const menu = document.querySelector('.main-menu');
+    menu.classList.toggle("menu-active");
+}
+
+
 const teamsBtn = document.querySelector('#teamsBtn');
 teamsBtn.addEventListener('click', renderTeams);
 
@@ -232,3 +239,5 @@ fixturesBtn.addEventListener('click', renderFixtures);
 
 document.addEventListener('DOMContentLoaded', renderHome);
 
+const menuBtn = document.querySelector('.navbar .menu-button');
+menuBtn.addEventListener('click', showMenu);
