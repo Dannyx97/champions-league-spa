@@ -219,25 +219,33 @@ function renderFixtures(){
 
 
 
-function showMenu(){
+function toggleMenu(){
     const menu = document.querySelector('.main-menu');
     menu.classList.toggle("menu-active");
 }
 
 
 const teamsBtn = document.querySelector('#teamsBtn');
-teamsBtn.addEventListener('click', renderTeams);
+teamsBtn.addEventListener('click', ()=> {toggleMenu();
+    renderTeams();
+});
 
 const standingsBtn = document.querySelector('#standingsBtn');
-standingsBtn.addEventListener('click', renderStandings);
+standingsBtn.addEventListener('click', ()=>{toggleMenu();
+    renderStandings();
+});
 
 const homeBtn = document.querySelector('#homeBtn');
-homeBtn.addEventListener('click', renderHome);
+homeBtn.addEventListener('click', ()=>{toggleMenu();
+    renderStandings();
+});
 
 const fixturesBtn = document.querySelector('#fixturesBtn');
-fixturesBtn.addEventListener('click', renderFixtures);
+fixturesBtn.addEventListener('click', ()=>{toggleMenu();
+    renderFixtures();
+});
 
 document.addEventListener('DOMContentLoaded', renderHome);
 
 const menuBtn = document.querySelector('.navbar .menu-button');
-menuBtn.addEventListener('click', showMenu);
+menuBtn.addEventListener('click', toggleMenu);
