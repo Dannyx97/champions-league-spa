@@ -246,21 +246,32 @@ img {
     cursor: pointer;
 }
 
+.main .table .flexCDiv{
+    display: flex;
+    gap: 50px;
+}
+
+.main .table .flexCDiv div{
+    min-width: 50px;
+}
+
+.main .table .flexCDiv .tableTeamName{
+    min-width: 400px;
+}
+
 .main .table {
-    display: grid;
-    grid-template-columns: repeat(7, auto);
-    gap: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
     margin: 30px auto 100px;
     padding: 50px;
-    justify-content: center;
-    justify-items: start;
-    align-items: center;
     font-size: 1.5rem;
-    background-color: rgb(14, 30, 91);
+    background-image: linear-gradient(to right, #005eb4, #141464);
     color: white;
     border-radius: 10px;
     width: 60%;
 }
+
 
 @media (max-width: 920px) {
     .teamContainer {
@@ -270,7 +281,7 @@ img {
     .main .table{
         width: 90%;
         overflow: auto;
-        padding: 10px;
+        padding: 20px;
         gap: 60px;
     }
 

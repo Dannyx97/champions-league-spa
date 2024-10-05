@@ -3,7 +3,7 @@ async function getTeams() {
     const data = await res.json();
 
     const allTeams = data.teams;
-
+    console.log(data);
     allTeams.forEach((team, index) => {
         const h2 = document.createElement('h2');
     h2.innerText = data.teams[index].name;
@@ -12,7 +12,7 @@ async function getTeams() {
     });
     
 }
-
+/*
 async function getStandings() {
     const res = await fetch('./standings.json');
     const data = await res.json();
@@ -67,6 +67,73 @@ async function getStandings() {
         tableDiv.appendChild(drawEl);
         tableDiv.appendChild(lostEl);
         tableDiv.appendChild(pointsEl);
+    })
+}
+*/
+async function getStandings() {
+    const res = await fetch('./standings.json');
+    const data = await res.json();
+
+    const leagueTable = data.standings[0].table;
+    console.log(leagueTable);
+
+    const cdiv = document.createElement('div');
+    cdiv.classList.add('flexCDiv');
+    const flpos = document.createElement('div');
+    flpos.innerText = "Pos";
+    const flteam = document.createElement('div');
+    flteam.innerText = "Team";
+    flteam.classList.add('tableTeamName');
+    const flpl = document.createElement('div');
+    flpl.innerText = "Pl";
+    const flw = document.createElement('div');
+    flw.innerText = "W";
+    const fld = document.createElement('div');
+    fld.innerText = "D";
+    const fll = document.createElement('div');
+    fll.innerText = "L";
+    const flpts = document.createElement('div');
+    flpts.innerText = "Pts";
+
+
+    const tableDiv = document.querySelector('.table');
+
+    cdiv.appendChild(flpos);
+    cdiv.appendChild(flteam);
+    cdiv.appendChild(flpl);
+    cdiv.appendChild(flw);
+    cdiv.appendChild(fld);
+    cdiv.appendChild(fll);
+    cdiv.appendChild(flpts);
+
+    tableDiv.appendChild(cdiv);
+
+    leagueTable.forEach((place)=> {
+        const div = document.createElement('div');
+        div.classList.add('flexCDiv')
+        const positionEl = document.createElement('div');
+        positionEl.innerText = place.position;
+        const teamEl = document.createElement('div');
+        teamEl.innerText = place.team.name;
+        teamEl.classList.add('tableTeamName');
+        const playedEl = document.createElement('div');
+        playedEl.innerText = place.playedGames;
+        const wonEl = document.createElement('div');
+        wonEl.innerText = place.won;
+        const drawEl = document.createElement('div');
+        drawEl.innerText = place.draw;
+        const lostEl = document.createElement('div');
+        lostEl.innerText = place.lost;
+        const pointsEl = document.createElement('div');
+        pointsEl.innerText = place.points;
+        div.appendChild(positionEl);
+        div.appendChild(teamEl);
+        div.appendChild(playedEl);
+        div.appendChild(wonEl);
+        div.appendChild(drawEl);
+        div.appendChild(lostEl);
+        div.appendChild(pointsEl);
+        tableDiv.appendChild(div);
     })
 }
 
@@ -237,7 +304,7 @@ standingsBtn.addEventListener('click', ()=>{toggleMenu();
 
 const homeBtn = document.querySelector('#homeBtn');
 homeBtn.addEventListener('click', ()=>{toggleMenu();
-    renderStandings();
+    renderHome();
 });
 
 const fixturesBtn = document.querySelector('#fixturesBtn');
