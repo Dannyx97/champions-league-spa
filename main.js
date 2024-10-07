@@ -1,5 +1,5 @@
 async function getTeams() {
-    const res = await fetch('./teams.json');
+    const res = await fetch('https://football-data-proxy.onrender.com/teams');
     const data = await res.json();
 
     const allTeams = data.teams;
@@ -12,66 +12,9 @@ async function getTeams() {
     });
     
 }
-/*
+
 async function getStandings() {
-    const res = await fetch('./standings.json');
-    const data = await res.json();
-
-    const leagueTable = data.standings[0].table;
-    console.log(leagueTable);
-
-    const flpos = document.createElement('div');
-    flpos.innerText = "Pos";
-    const flteam = document.createElement('div');
-    flteam.innerText = "Team";
-    const flpl = document.createElement('div');
-    flpl.innerText = "Pl";
-    const flw = document.createElement('div');
-    flw.innerText = "W";
-    const fld = document.createElement('div');
-    fld.innerText = "D";
-    const fll = document.createElement('div');
-    fll.innerText = "L";
-    const flpts = document.createElement('div');
-    flpts.innerText = "Pts";
-
-    const tableDiv = document.querySelector('.table');
-
-    tableDiv.appendChild(flpos);
-    tableDiv.appendChild(flteam);
-    tableDiv.appendChild(flpl);
-    tableDiv.appendChild(flw);
-    tableDiv.appendChild(fld);
-    tableDiv.appendChild(fll);
-    tableDiv.appendChild(flpts);
-
-    leagueTable.forEach((place)=> {
-        const positionEl = document.createElement('div');
-        positionEl.innerText = place.position;
-        const teamEl = document.createElement('div');
-        teamEl.innerText = place.team.name;
-        const playedEl = document.createElement('div');
-        playedEl.innerText = place.playedGames;
-        const wonEl = document.createElement('div');
-        wonEl.innerText = place.won;
-        const drawEl = document.createElement('div');
-        drawEl.innerText = place.draw;
-        const lostEl = document.createElement('div');
-        lostEl.innerText = place.lost;
-        const pointsEl = document.createElement('div');
-        pointsEl.innerText = place.points;
-        tableDiv.appendChild(positionEl);
-        tableDiv.appendChild(teamEl);
-        tableDiv.appendChild(playedEl);
-        tableDiv.appendChild(wonEl);
-        tableDiv.appendChild(drawEl);
-        tableDiv.appendChild(lostEl);
-        tableDiv.appendChild(pointsEl);
-    })
-}
-*/
-async function getStandings() {
-    const res = await fetch('./standings.json');
+    const res = await fetch('https://football-data-proxy.onrender.com/standings');
     const data = await res.json();
 
     const leagueTable = data.standings[0].table;
@@ -139,7 +82,7 @@ async function getStandings() {
 
 
 async function showDetails(ind) {
-    const res = await fetch('./teams.json');
+    const res = await fetch('https://football-data-proxy.onrender.com/teams');
     const data = await res.json();
     const allTeams = data.teams;
     const name = allTeams[ind].name;
